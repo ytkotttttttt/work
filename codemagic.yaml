@@ -6,8 +6,8 @@ workflows:
     name: iOS Workflow
     environment:
       vars:
-        XCODE_VERSION: 13.4.1
-      xcode: 13.4.1
+        XCODE_VERSION: 16.1
+      xcode: 16.1
     scripts:
       - name: Install npm dependencies
         script: |
@@ -32,3 +32,4 @@ workflows:
     artifacts:
       - build/*.ipa
       - $CM_BUILD_DIR/**/*.xcarchive
+
