@@ -30,8 +30,7 @@ workflows:
           xcodebuild -exportArchive \
                      -archivePath $CM_BUILD_DIR/App.xcarchive \
                      -exportPath $CM_BUILD_DIR/build \
-                     -exportOptionsPlist ExportOptions.plist \
-                     -allowProvisioningUpdates
+                     -exportOptionsPlist ExportOptions.plist
     artifacts:
       - build/*.ipa
       - $CM_BUILD_DIR/**/*.xcarchive
