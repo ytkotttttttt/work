@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>development</string>
+    <string>ad-hoc</string>
     <key>teamID</key>
-    <string>YOUR_TEAM_ID</string>
+    <string></string>
     <key>uploadBitcode</key>
     <false/>
     <key>uploadSymbols</key>
@@ -13,13 +13,11 @@
     <key>compileBitcode</key>
     <false/>
     <key>signingStyle</key>
-    <string>manual</string>
+    <string>automatic</string>
+    <key>destination</key>
+    <string>export</string>
     <key>provisioningProfiles</key>
     <dict>
-        <key>com.cryptoice.app</key>
-        <string>YOUR_PROVISIONING_PROFILE</string>
     </dict>
-    <key>signingCertificate</key>
-    <string>iPhone Developer</string>
 </dict>
 </plist>
