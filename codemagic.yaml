@@ -17,19 +17,21 @@ workflows:
           npx cap sync ios
       - name: Build iOS app
         script: |
-          xcodebuild -workspace ios/App.xcworkspace \
+          cd ios
+          xcodebuild -workspace App.xcworkspace \
                      -scheme App \
                      -configuration Release \
                      -destination generic/platform=iOS \
                      -archivePath $CM_BUILD_DIR/App.xcarchive \
-                     archive
+                     archive \
+                     -allowProvisioningUpdates
       - name: Export IPA
         script: |
           xcodebuild -exportArchive \
                      -archivePath $CM_BUILD_DIR/App.xcarchive \
                      -exportPath $CM_BUILD_DIR/build \
-                     -exportOptionsPlist ExportOptions.plist
+                     -exportOptionsPlist ExportOptions.plist \
+                     -allowProvisioningUpdates
     artifacts:
       - build/*.ipa
       - $CM_BUILD_DIR/**/*.xcarchive
-
