@@ -1,0 +1,28 @@
+{
+  "appId": "com.cryptoice.app",
+  "appName": "CRYPTO ICE v4",
+  "webDir": "0",
+  "server": {
+    "iosScheme": "https"
+  },
+  "ios": {
+    "scheme": "CRYPTOICE"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#000000",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false,
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#999999",
+      "splashFullScreen": true,
+      "splashImmersive": true,
+      "layoutName": "launch_screen",
+      "useDialog": true
+    }
+  }
+}

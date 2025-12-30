@@ -1,0 +1,34 @@
+# Codemagic Build Configuration
+
+# Flutter workflow example - modify for Capacitor
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      vars:
+        XCODE_VERSION: 13.4.1
+      xcode: 13.4.1
+    scripts:
+      - name: Install npm dependencies
+        script: |
+          npm install
+      - name: Set up Capacitor
+        script: |
+          npx cap sync ios
+      - name: Build iOS app
+        script: |
+          xcodebuild -workspace ios/App.xcworkspace \
+                     -scheme App \
+                     -configuration Release \
+                     -destination generic/platform=iOS \
+                     -archivePath $CM_BUILD_DIR/App.xcarchive \
+                     archive
+      - name: Export IPA
+        script: |
+          xcodebuild -exportArchive \
+                     -archivePath $CM_BUILD_DIR/App.xcarchive \
+                     -exportPath $CM_BUILD_DIR/build \
+                     -exportOptionsPlist ExportOptions.plist
+    artifacts:
+      - build/*.ipa
+      - $CM_BUILD_DIR/**/*.xcarchive
